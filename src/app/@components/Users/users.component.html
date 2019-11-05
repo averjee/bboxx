@@ -1,0 +1,33 @@
+<div class="container u-margin-top">
+
+    
+    <br><br>
+
+    <div class="col-md-12">
+            <div class="form-row">
+                    <div class="search-product">
+                        <input type="text" class="form-control" name="search" placeholder="Search By Anything"
+                            [(ngModel)]="search">
+            </div>
+        <button class="btn btn-success u-margin-left-small pull-right" type="button" data-toggle="modal"
+            data-target="#addUser" (click)="addNew = true"><i class="fa fa-plus"></i>
+            Add new user</button>
+    </div>
+
+    <div *ngIf="addNew === true">
+        <app-add-user (newUser)="onAddNew($event)"></app-add-user>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="flex__container flex__container-center">
+        <ng-container *ngFor="let user of users | filter:search | paginate: { itemsPerPage: 10, currentPage: p }">
+            <app-user [(user)]="user" (deleteUser)="onDeleteUser($event)"
+                class="flex__item"></app-user>
+        </ng-container>
+    </div>
+</div>
+
+<br>
+<div class="form-row"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
+<br>
