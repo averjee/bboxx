@@ -1,6 +1,6 @@
 # Installation instructions
 
-1) clone project locally
+1) clone project locally: `git clone https://github.com/averjee/bboxx.git`
 2) inside cloned directory run: `npm install`
 3) to start project run: `ng serve -o`
 
