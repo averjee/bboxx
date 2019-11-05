@@ -8,4 +8,4 @@
 
 inside cloned directory run: `npm run test __tests__/e2e.js`
 
-Note: if the test fails the first time you run it then this is because the chromium test browser may have taken too long to load and therefore you will need to run it a second time whilst keeping the first chromium browser open.
+Note: if the test fails the first time you run it then this is because the chromium test browser may have taken too long to load and therefore you will need to run the above command a second time whilst keeping the first chromium browser open.
